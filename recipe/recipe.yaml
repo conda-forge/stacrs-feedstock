@@ -14,14 +14,6 @@ build:
   number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - if: win
-      then:
-        - set OPENSSL_DIR=%LIBRARY_PREFIX%
-        - set OPENSSL_NO_VENDOR=1
-    - if: unix
-      then:
-        - export OPENSSL_DIR=$PREFIX
-        - export OPENSSL_NO_VENDOR=1
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip:
     - match(python, "<3.10")
@@ -34,7 +26,6 @@ requirements:
     - cargo-bundle-licenses
   host:
     - maturin >=1.7,<2.0
-    - openssl
     - pip
     - python
   run:
