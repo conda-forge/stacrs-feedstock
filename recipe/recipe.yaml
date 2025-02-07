@@ -15,8 +15,9 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m maturin build -F duckdb/bundled
-    - ${{ PYTHON }} -m pip install target/wheels/*.whl -vv --no-deps --no-build-isolation # [unix]
-    - ${{ PYTHON }} -m pip install target\wheels\*.whl -vv --no-deps --no-build-isolation # [win]
+    - if: win
+      then: ${{ PYTHON }} -m pip install target\wheels\*.whl -vv --no-deps --no-build-isolation
+      else: ${{ PYTHON }} -m pip install target/wheels/*.whl -vv --no-deps --no-build-isolation
   skip:
     - match(python, "<3.10")
 
