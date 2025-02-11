@@ -11,7 +11,7 @@ source:
   sha256: be943bf12bc9ff8d7b0350c871d70ea8be56827022347f20cc2d34179a84bc85
 
 build:
-  number: 0
+  number: 1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m maturin build -F duckdb/bundled --release --strip --out wheel
