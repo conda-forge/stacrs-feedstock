@@ -27,7 +27,7 @@ requirements:
     - if: build_platform != target_platform
       then:
         - python
-        - cross-python_{{ target_platform }}
+        - cross-python_${{ target_platform }}
   host:
     - maturin >=1.7,<2.0
     - pip
