@@ -1,6 +1,6 @@
 context:
   name: stacrs
-  version: "0.5.3"
+  version: "0.5.4"
 
 package:
   name: ${{ name|lower }}
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/stacrs-${{ version }}.tar.gz
-  sha256: 5439aa2ec894d73ca0ebc2100eb177386cbbb1e558a1e063859adca0943e6f85
+  sha256: 17cc0766aa1061bd0dc584f340157e893a53c05e99182987c2382eaf6a429926
 
 build:
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
