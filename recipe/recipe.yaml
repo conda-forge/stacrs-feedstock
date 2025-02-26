@@ -1,6 +1,6 @@
 context:
   name: stacrs
-  version: "0.5.5"
+  version: "0.5.6"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/stacrs-${{ version }}.tar.gz
-  sha256: 22abb773dec5b73c11b81827d73675eb9683dc02b3a93a0e213a15f26d2d7275
+  sha256: f154340e3f754d30b29fad06f3ce2fa6112c7b2535592cc5ed7334bd6f12c155
 
 build:
   number: 0
