@@ -3,13 +3,13 @@ About stacrs-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/stacrs-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.gadom.ski/stacrs
+Home: https://stac-utils.github.io/stacrs
 
 Package license: MIT OR Apache-2.0
 
-Summary: A no-dependency Python package for STAC, using Rust under the hood.
+Summary:  A Python package for STAC using Rust under the hood 
 
-Development: https://github.com/gadomski/stacrs
+Development: https://github.com/stac-utils/stacrs
 
 Current build status
 ====================
