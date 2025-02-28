@@ -13,6 +13,7 @@ source:
 build:
   number: 0
   script:
+    - git config --system core.longpaths true # for windoze builds if we have patch dependencies
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - maturin build --release -F duckdb-bundled --out .
     - ${{ PYTHON }} -m pip install stacrs*.whl -vv --no-deps --no-build-isolation
