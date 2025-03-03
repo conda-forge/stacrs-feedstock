@@ -13,7 +13,10 @@ source:
 build:
   number: 0
   script:
-    - git config --system core.longpaths true # for windoze builds if we have patch dependencies
+    - if: win # work around long path problem, https://github.com/conda-forge/staged-recipes/commit/d86e4bb10154fc3833cae054e197ea2d7119dac7
+      then: |
+        set CARGO_HOME=C:\.cargo
+        md %CARGO_HOME%
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - maturin build --release -F duckdb-bundled --out .
     - ${{ PYTHON }} -m pip install stacrs*.whl -vv --no-deps --no-build-isolation
