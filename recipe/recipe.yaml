@@ -18,7 +18,7 @@ build:
         set CARGO_HOME=C:\.cargo
         md %CARGO_HOME%
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - MATURIN_PEP517_ARGS="--features duckdb-bundled" ${{ PYTHON }} -m pip install stacrs*.whl -vv --no-deps --no-build-isolation
+    - MATURIN_PEP517_ARGS="--features duckdb-bundled" ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip:
     - match(python, "<3.10")
 
